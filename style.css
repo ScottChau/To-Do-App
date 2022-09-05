@@ -1,8 +1,27 @@
-.display_section {
-  display: block;
-}
-
 p {
   display: inline-block;
   padding: 5px;
+}
+
+.input_section {
+  padding: 50px;
+  margin: 0 auto;
+  border: 1px black solid;
+  height: 100px;
+  width: 500px;
+  border-radius: 10px;
+}
+
+h1 {
+  text-align: center;
+}
+
+#form {
+  display: flex;
+  justify-content: center;
+}
+
+.display_section {
+  display: flex;
+  justify-content: center;
 }

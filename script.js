@@ -1,8 +1,6 @@
 const text = document.getElementById("input");
 const allclearBtn = document.getElementById("clear");
-// const submitBtn = document.getElementById("submit");
 const form = document.getElementById("form");
-// const displaySection = document.querySelector(".display_section");
 const list = document.querySelector(".item_list");
 
 function appendEvent() {
@@ -11,17 +9,12 @@ function appendEvent() {
   const event = document.createTextNode(text.value);
   const deleteBtn = document.createElement("button");
   const doneBtn = document.createElement("button");
-  //   const number = document.querySelectorAll("p").length + 1;
   deleteBtn.innerHTML = "X";
   doneBtn.innerHTML = "Done";
   p.appendChild(event);
 
-  //   const output = `${event.textContent} `;
-
-  //   listEvent.insertAdjacentHTML("beforeend", output);
-  listEvent.appendChild(p);
-  listEvent.appendChild(deleteBtn);
-  listEvent.appendChild(doneBtn);
+  //   append multiple child
+  listEvent.append(p, deleteBtn, doneBtn);
 
   list.append(listEvent);
 
@@ -29,10 +22,11 @@ function appendEvent() {
     list.removeChild(listEvent);
   });
 
-  doneBtn.addEventListener(
-    "click",
-    () => (p.style.textDecoration = "line-through")
-  );
+  doneBtn.addEventListener("click", () => {
+    (p.style.textDecoration = "line-through")(
+      (p.style.textDecorationThickness = "5px")
+    );
+  });
 }
 
 form.addEventListener("submit", function (e) {
